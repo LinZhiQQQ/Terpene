@@ -2,7 +2,7 @@ package terpene.entity;
 
 import java.util.ArrayList;
 
-public class Terpene extends SimilarEntity{
+public class Terpene extends SimilarAbstract {
     private ArrayList<Object> atomic = new ArrayList<Object>();
 
     public ArrayList<Object> getAtomic() {

@@ -1,8 +1,7 @@
 package terpene.model;
 
-import terpene.entity.SimilarEntity;
-import terpene.entity.Terpene;
+import terpene.entity.SimilarAbstract;
 
 public interface SimilarityAlgorithm {
-    public Double similarity(SimilarEntity object1, SimilarEntity object2, Integer typeSize);
+    public Double similarity(SimilarAbstract object1, SimilarAbstract object2, Integer typeSize);
 }

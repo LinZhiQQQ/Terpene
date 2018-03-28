@@ -1,8 +1,7 @@
 package terpene.model.impl;
 
-import terpene.entity.SimilarEntity;
+import terpene.entity.SimilarAbstract;
 import terpene.model.SimilarityAlgorithm;
-import terpene.entity.Terpene;
 
 import java.util.ArrayList;
 
@@ -14,7 +13,7 @@ cos 值接近 1 表示夹角接近 0，也就是相似度越高
 */
 public class CosineSimilarity implements SimilarityAlgorithm {
     @Override
-    public Double similarity(SimilarEntity object1, SimilarEntity object2, Integer typeSize) {
+    public Double similarity(SimilarAbstract object1, SimilarAbstract object2, Integer typeSize) {
         Double ans = 0.0;
         Double numberator = 0.0;    //分子
         Double denominatorX = 0.0;   //分母 X

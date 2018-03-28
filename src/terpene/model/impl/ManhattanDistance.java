@@ -1,8 +1,7 @@
 package terpene.model.impl;
 
-import terpene.entity.SimilarEntity;
+import terpene.entity.SimilarAbstract;
 import terpene.model.SimilarityAlgorithm;
-import terpene.entity.Terpene;
 
 import java.util.ArrayList;
 
@@ -13,7 +12,7 @@ import java.util.ArrayList;
 */
 public class ManhattanDistance implements SimilarityAlgorithm {
     @Override
-    public Double similarity(SimilarEntity object1, SimilarEntity object2, Integer typeSize) {
+    public Double similarity(SimilarAbstract object1, SimilarAbstract object2, Integer typeSize) {
         Double ans = 0.0;
         ArrayList<Object> t1 = object1.getAtomic();
         ArrayList<Object> t2 = object2.getAtomic();
