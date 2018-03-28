@@ -26,13 +26,13 @@ public class Computing {
         this.choice = choice;
     }
 
-    public Double getSimilarity(Terpene terpene1,Terpene terpene2){
+    public Double getSimilarity(Terpene terpene1,Terpene terpene2, Integer typeSize){
         if(choice.equals("CosineSimilarity")){
-            return cosineSimilarity.similarity(terpene1,terpene2);
+            return cosineSimilarity.similarity(terpene1,terpene2,typeSize);
         }else if(choice.equals("EucledianDistance")){
-            return eucledianDistance.similarity(terpene1,terpene2);
+            return eucledianDistance.similarity(terpene1,terpene2,typeSize);
         }else if(choice.equals("ManhattanDistance")){
-            return manhattanDistance.similarity(terpene1,terpene2);
+            return manhattanDistance.similarity(terpene1,terpene2,typeSize);
         }else{
             return 0.0;
         }

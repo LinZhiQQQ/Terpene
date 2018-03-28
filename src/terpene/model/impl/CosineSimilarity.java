@@ -1,7 +1,10 @@
 package terpene.model.impl;
 
+import terpene.entity.SimilarEntity;
 import terpene.model.SimilarityAlgorithm;
 import terpene.entity.Terpene;
+
+import java.util.ArrayList;
 
 
 /*
@@ -11,17 +14,19 @@ cos 值接近 1 表示夹角接近 0，也就是相似度越高
 */
 public class CosineSimilarity implements SimilarityAlgorithm {
     @Override
-    public Double similarity(Terpene terpene1, Terpene terpene2) {
+    public Double similarity(SimilarEntity object1, SimilarEntity object2, Integer typeSize) {
         Double ans = 0.0;
         Double numberator = 0.0;    //分子
         Double denominatorX = 0.0;   //分母 X
         Double denominatorY = 0.0;   //分母 Y
-        Double[] t1 = terpene1.getAtomic();
-        Double[] t2 = terpene2.getAtomic();
-        for(int i = 0;i < t1.length;i++){
-            numberator += (t1[i] * t2[i]);
-            denominatorX += Math.pow(t1[i],2);
-            denominatorY += Math.pow(t2[i],2);
+        ArrayList<Object> t1 = object1.getAtomic();
+        ArrayList<Object> t2 = object1.getAtomic();
+        for(int i = 1;i <= typeSize;i++){
+            Double num1 = Double.valueOf((String)t1.get(i));
+            Double num2 = Double.valueOf((String)t2.get(i));
+            numberator += (num1 * num2);
+            denominatorX += Math.pow(num1,2);
+            denominatorY += Math.pow(num2,2);
         }
         ans = numberator / (denominatorX * denominatorY);
         return ans;

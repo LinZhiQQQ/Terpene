@@ -1,20 +1,24 @@
 package terpene.entity;
 
-public class Terpene {
-    private Double[] atomic = new Double[36];
+import java.util.ArrayList;
 
-    public Double[] getAtomic() {
+public class Terpene extends SimilarEntity{
+    private ArrayList<Object> atomic = new ArrayList<Object>();
+
+    public ArrayList<Object> getAtomic() {
         return atomic;
     }
 
-    public void setAtomic(Double[] atomic) {
+    public void setAtomic(ArrayList<Object> atomic) {
         this.atomic = atomic;
     }
 
+    public final static Integer TYPE_SIZE = 20;
+
     Terpene(){}
 
-    Terpene(Double[] atomic){
-        this.atomic = atomic.clone();
+    public Terpene(ArrayList<Object> atomic){
+        this.atomic = (ArrayList<Object>) atomic.clone();
     }
 
 }
