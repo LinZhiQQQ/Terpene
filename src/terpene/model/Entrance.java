@@ -14,7 +14,7 @@ public class Entrance extends Application {
     public void start(Stage primaryStage) throws Exception{
         Scene scene;
         Painting painting = new Painting();
-        scene = new Scene(painting,300,300);
+        scene = new Scene(painting,400,300);
         primaryStage.setTitle("Terpene");
         primaryStage.setScene(scene);
         primaryStage.show();

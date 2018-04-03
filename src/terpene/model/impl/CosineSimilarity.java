@@ -19,14 +19,16 @@ public class CosineSimilarity implements SimilarityAlgorithm {
         Double denominatorX = 0.0;   //分母 X
         Double denominatorY = 0.0;   //分母 Y
         ArrayList<Object> t1 = object1.getAtomic();
-        ArrayList<Object> t2 = object1.getAtomic();
+        ArrayList<Object> t2 = object2.getAtomic();
         for(int i = 1;i <= typeSize;i++){
             Double num1 = Double.valueOf((String)t1.get(i));
             Double num2 = Double.valueOf((String)t2.get(i));
+//            System.out.println("num1  = " + num1 + " num2 = " + num2);
             numberator += (num1 * num2);
             denominatorX += Math.pow(num1,2);
             denominatorY += Math.pow(num2,2);
         }
+//        System.out.println("numberator = " + numberator);
         ans = numberator / (denominatorX * denominatorY);
         return ans;
     }

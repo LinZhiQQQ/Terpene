@@ -3,12 +3,14 @@ package terpene.controller;
 import terpene.entity.Terpene;
 import terpene.model.impl.CosineSimilarity;
 import terpene.model.impl.EucledianDistance;
+import terpene.model.impl.MahalanobisDistance;
 import terpene.model.impl.ManhattanDistance;
 
 public class Computing {
     private CosineSimilarity cosineSimilarity = new CosineSimilarity();
     private EucledianDistance eucledianDistance = new EucledianDistance();
     private ManhattanDistance manhattanDistance = new ManhattanDistance();
+    private MahalanobisDistance mahalanobisDistance = new MahalanobisDistance();
 
     private String choice;
 
@@ -33,6 +35,8 @@ public class Computing {
             return eucledianDistance.similarity(terpene1,terpene2,typeSize);
         }else if(choice.equals("ManhattanDistance")){
             return manhattanDistance.similarity(terpene1,terpene2,typeSize);
+        }else if(choice.equals("MahalanobisDistance")){
+            return mahalanobisDistance.similarity(terpene1,terpene2,typeSize);
         }else{
             return 0.0;
         }

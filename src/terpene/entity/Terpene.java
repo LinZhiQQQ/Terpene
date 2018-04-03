@@ -21,4 +21,10 @@ public class Terpene extends SimilarAbstract {
         this.atomic = (ArrayList<Object>) atomic.clone();
     }
 
+    @Override
+    public String toString() {
+        return "Terpene{" +
+                "atomic=" + atomic +
+                "} " + super.toString();
+    }
 }
